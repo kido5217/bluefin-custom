@@ -149,7 +149,7 @@ rm -rf ${GNOME_EXT_PATH}/'window-list@gnome-shell-extensions.gcampax.github.com'
 
 WP_PATH="/usr/share/backgrounds/kido"
 mkdir -p ${WP_PATH}
-cp wallpapers/* ${WP_PATH}
+cp /ctx/wallpapers/* ${WP_PATH}/
 
 ## Cleanup
 
