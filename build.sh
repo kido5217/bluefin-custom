@@ -145,6 +145,11 @@ rm -rf ${GNOME_EXT_PATH}/'launch-new-instance@gnome-shell-extensions.gcampax.git
 rm -rf ${GNOME_EXT_PATH}/'search-light@icedman.github.com'
 rm -rf ${GNOME_EXT_PATH}/'window-list@gnome-shell-extensions.gcampax.github.com'
 
+## Add wallpaper
+
+WP_PATH="/usr/share/backgrounds/kido"
+mkdir -p ${WP_PATH}
+cp wallpapers/* ${WP_PATH}
 
 ## Cleanup
 
