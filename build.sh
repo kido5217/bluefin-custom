@@ -131,6 +131,11 @@ fc-cache -f -v
 rm -rf JetBrainsMono
 rm -rf JetBrainsMono.zip
 
+## Install mise
+
+dnf5 --assumeyes copr enable jdxcode/mise
+dnf5 install --assumeyes mise
+
 ## Update all packages
 
 # dnf5 --assumeyes update
