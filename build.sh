@@ -136,6 +136,13 @@ rm -rf JetBrainsMono.zip
 dnf5 --assumeyes copr enable jdxcode/mise
 dnf5 install --assumeyes mise
 
+## Install pngout
+
+export PNGOUT_VERSION="20200115"
+wget https://www.jonof.id.au/files/kenutils/pngout-${PNGOUT_VERSION}-linux.tar.gz
+tar -xf pngout-${PNGOUT_VERSION}-linux.tar.gz -C /usr/local/bin
+rm pngout-${PNGOUT_VERSION}-linux.tar.gz
+
 ## Update all packages
 
 # dnf5 --assumeyes update
