@@ -140,8 +140,10 @@ dnf5 install --assumeyes mise
 
 export PNGOUT_VERSION="20200115"
 wget https://www.jonof.id.au/files/kenutils/pngout-${PNGOUT_VERSION}-linux.tar.gz
-tar -xf pngout-${PNGOUT_VERSION}-linux.tar.gz -C /usr/bin
-rm pngout-${PNGOUT_VERSION}-linux.tar.gz
+tar -xf pngout-${PNGOUT_VERSION}-linux.tar.gz
+cp pngout-${PNGOUT_VERSION}-linux/amd64/pngout /usr/bin/
+rm -f pngout-${PNGOUT_VERSION}-linux.tar.gz
+rm -rf pngout-${PNGOUT_VERSION}-linux
 
 ## Update all packages
 
