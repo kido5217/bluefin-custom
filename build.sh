@@ -64,6 +64,7 @@ systemctl enable netbird
 dnf5 install --assumeyes direnv pwgen the_silver_searcher unar waifu2x-converter-cpp xbanish
 dnf5 install --assumeyes yt-dlp yt-dlp+default yt-dlp+secretstorage yt-dlp-fish-completion
 dnf5 install --assumeyes libgda libgda-sqlite
+dnf5 install --assumeyes blender blender-cuda
 
 ## Remove tailscale
 
