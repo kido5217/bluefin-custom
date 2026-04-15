@@ -147,6 +147,11 @@ cp pngout-${PNGOUT_VERSION}-linux/amd64/pngout /usr/bin/
 rm -f pngout-${PNGOUT_VERSION}-linux.tar.gz
 rm -rf pngout-${PNGOUT_VERSION}-linux
 
+## Install quickshell
+
+dnf5 --assumeyes copr enable errornointernet/quickshell
+dnf5 install --assumeyes quickshell
+
 ## Update all packages
 
 # dnf5 --assumeyes update
