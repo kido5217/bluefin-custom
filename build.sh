@@ -72,30 +72,26 @@ dnf5 install --assumeyes gnome-directory-thumbnailer gnome-kra-ora-thumbnailer
 systemctl disable tailscaled
 dnf5 remove --assumeyes tailscale
 
-## Remove homebrew
-
-rm -rf /var/home/linuxbrew
-
 ## Add nix packet manager
 
-mkdir -p /var/nix
+# mkdir -p /var/nix
 
-tee /etc/systemd/system/nix.mount <<EOF
-[Unit]
-Description=Bind mount for /nix
-Before=nix-daemon.service
-[Mount]
-What=/var/nix
-Where=/nix
-Type=none
-Options=bind
-[Install]
-WantedBy=multi-user.target
-EOF
+# tee /etc/systemd/system/nix.mount <<EOF
+# [Unit]
+# Description=Bind mount for /nix
+# Before=nix-daemon.service
+# [Mount]
+# What=/var/nix
+# Where=/nix
+# Type=none
+# Options=bind
+# [Install]
+# WantedBy=multi-user.target
+# EOF
 
-systemctl enable nix.mount
-dnf5 install --assumeyes nix
-systemctl enable nix-daemon
+# systemctl enable nix.mount
+# dnf5 install --assumeyes nix
+# systemctl enable nix-daemon
 
 ## Disable mcelog
 
@@ -138,6 +134,7 @@ rm -rf JetBrainsMono.zip
 
 dnf5 --assumeyes copr enable jdxcode/mise
 dnf5 install --assumeyes mise
+dnf5 --assumeyes copr disable jdxcode/mise
 
 ## Install pngout
 
@@ -152,6 +149,7 @@ rm -rf pngout-${PNGOUT_VERSION}-linux
 
 dnf5 --assumeyes copr enable errornointernet/quickshell
 dnf5 install --assumeyes quickshell
+dnf5 --assumeyes copr disable errornointernet/quickshell
 
 ## Update all packages
 
