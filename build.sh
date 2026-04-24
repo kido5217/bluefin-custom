@@ -136,7 +136,6 @@ dnf5 --assumeyes copr enable jdxcode/mise
 dnf5 install --assumeyes mise
 dnf5 --assumeyes copr disable jdxcode/mise
 
-
 ## Install pngout
 
 export PNGOUT_VERSION="20200115"
