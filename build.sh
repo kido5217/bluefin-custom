@@ -72,30 +72,26 @@ dnf5 install --assumeyes gnome-directory-thumbnailer gnome-kra-ora-thumbnailer
 systemctl disable tailscaled
 dnf5 remove --assumeyes tailscale
 
-## Remove homebrew
-
-rm -rf /var/home/linuxbrew
-
 ## Add nix packet manager
 
-mkdir -p /var/nix
+# mkdir -p /var/nix
 
-tee /etc/systemd/system/nix.mount <<EOF
-[Unit]
-Description=Bind mount for /nix
-Before=nix-daemon.service
-[Mount]
-What=/var/nix
-Where=/nix
-Type=none
-Options=bind
-[Install]
-WantedBy=multi-user.target
-EOF
+# tee /etc/systemd/system/nix.mount <<EOF
+# [Unit]
+# Description=Bind mount for /nix
+# Before=nix-daemon.service
+# [Mount]
+# What=/var/nix
+# Where=/nix
+# Type=none
+# Options=bind
+# [Install]
+# WantedBy=multi-user.target
+# EOF
 
-systemctl enable nix.mount
-dnf5 install --assumeyes nix
-systemctl enable nix-daemon
+# systemctl enable nix.mount
+# dnf5 install --assumeyes nix
+# systemctl enable nix-daemon
 
 ## Disable mcelog
 
