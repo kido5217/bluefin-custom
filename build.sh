@@ -134,6 +134,8 @@ rm -rf JetBrainsMono.zip
 
 dnf5 --assumeyes copr enable jdxcode/mise
 dnf5 install --assumeyes mise
+dnf5 --assumeyes copr disable jdxcode/mise
+
 
 ## Install pngout
 
@@ -148,6 +150,7 @@ rm -rf pngout-${PNGOUT_VERSION}-linux
 
 dnf5 --assumeyes copr enable errornointernet/quickshell
 dnf5 install --assumeyes quickshell
+dnf5 --assumeyes copr disable errornointernet/quickshell
 
 ## Update all packages
 
