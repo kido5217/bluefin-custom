@@ -66,6 +66,7 @@ dnf5 install --assumeyes yt-dlp yt-dlp+default yt-dlp+secretstorage yt-dlp-fish-
 dnf5 install --assumeyes libgda libgda-sqlite
 dnf5 install --assumeyes blender blender-cuda
 dnf5 install --assumeyes gnome-directory-thumbnailer gnome-kra-ora-thumbnailer
+dnf5 install --assumeyes nebula
 
 ## Remove tailscale
 
