@@ -67,6 +67,7 @@ dnf5 install --assumeyes libgda libgda-sqlite
 dnf5 install --assumeyes blender blender-cuda
 dnf5 install --assumeyes gnome-directory-thumbnailer gnome-kra-ora-thumbnailer
 dnf5 install --assumeyes nebula
+dnf5 install --assumeyes llama-cpp
 
 ## Remove tailscale
 
@@ -108,6 +109,7 @@ dnf5 remove --assumeyes docker-ce docker-ce-cli docker-ce-rootless-extras docker
 dnf5 install --assumeyes podman-docker podman-compose
 echo 'DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock' >> /etc/environment
 touch /etc/containers/nodocker
+systemctl enable --now podman.socket
 
 ## Install yaak
 
