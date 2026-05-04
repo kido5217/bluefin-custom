@@ -21,7 +21,7 @@ set -ouex pipefail
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+#systemctl enable podman.socket
 
 ## netbird
 
@@ -67,7 +67,8 @@ dnf5 install --assumeyes libgda libgda-sqlite
 dnf5 install --assumeyes blender blender-cuda
 dnf5 install --assumeyes gnome-directory-thumbnailer gnome-kra-ora-thumbnailer
 dnf5 install --assumeyes nebula
-dnf5 install --assumeyes llama-cpp
+#dnf5 install --assumeyes llama-cpp
+#dnf5 install --assumeyes cuda
 
 ## Remove tailscale
 
@@ -109,7 +110,7 @@ dnf5 remove --assumeyes docker-ce docker-ce-cli docker-ce-rootless-extras docker
 dnf5 install --assumeyes podman-docker podman-compose
 echo 'DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock' >> /etc/environment
 touch /etc/containers/nodocker
-systemctl enable --now podman.socket
+systemctl enable podman.socket
 
 ## Install yaak
 
@@ -121,17 +122,20 @@ rm -f yaak-${YAAK_VERSION}-1.x86_64.rpm
 ## Install patched jetbrains mono
 
 dnf5 remove --assumeyes jetbrains-mono-fonts-all
+dnf5 -y copr enable che/nerd-fonts
+dnf5 install --assumeyes nerd-fonts
+dnf5 -y copr disable che/nerd-fonts
 
-export NJB_VERSION="3.4.0"
-export NJB_PATH="/usr/share/fonts/jetbrains-mono-nl-nerd-fonts"
+# export NJB_VERSION="3.4.0"
+# export NJB_PATH="/usr/share/fonts/jetbrains-mono-nl-nerd-fonts"
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v${NJB_VERSION}/JetBrainsMono.zip
-unzip -d JetBrainsMono JetBrainsMono.zip
-mkdir ${NJB_PATH}
-cp JetBrainsMono/JetBrainsMonoNL*.ttf ${NJB_PATH}/
-fc-cache -f -v
-rm -rf JetBrainsMono
-rm -rf JetBrainsMono.zip
+# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v${NJB_VERSION}/JetBrainsMono.zip
+# unzip -d JetBrainsMono JetBrainsMono.zip
+# mkdir ${NJB_PATH}
+# cp JetBrainsMono/JetBrainsMonoNL*.ttf ${NJB_PATH}/
+# fc-cache -f -v
+# rm -rf JetBrainsMono
+# rm -rf JetBrainsMono.zip
 
 ## Install mise
 
