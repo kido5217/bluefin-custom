@@ -23,6 +23,10 @@ set -ouex pipefail
 
 #systemctl enable podman.socket
 
+## CUDA
+
+dnf5 install --assumeyes cuda-devel
+
 ## netbird
 
 tee /etc/yum.repos.d/netbird.repo <<EOF
@@ -121,10 +125,10 @@ rm -f yaak-${YAAK_VERSION}-1.x86_64.rpm
 
 ## Install patched jetbrains mono
 
-dnf5 remove --assumeyes jetbrains-mono-fonts-all
-dnf5 -y copr enable che/nerd-fonts
-dnf5 install --assumeyes nerd-fonts
-dnf5 -y copr disable che/nerd-fonts
+# dnf5 remove --assumeyes jetbrains-mono-fonts-all
+# dnf5 -y copr enable che/nerd-fonts
+# dnf5 install --assumeyes nerd-fonts
+# dnf5 -y copr disable che/nerd-fonts
 
 # export NJB_VERSION="3.4.0"
 # export NJB_PATH="/usr/share/fonts/jetbrains-mono-nl-nerd-fonts"
